@@ -1,31 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-&default_transform {
-    row-offset = <4>;
-};
-
 / {
     chosen {
         zephyr,display = &oled; 
-        zmk,kscan = &mock_kscan,&default_kscan;
+        zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
-    };
-
-    default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "default_kscan";
-        diode-direction = "col2row";
-
-        row-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        
-        col-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 20 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 19 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 18 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 15 GPIO_ACTIVE_HIGH>;
-        };
     };
 
     mock_kscan: mock_kscan_0 {
