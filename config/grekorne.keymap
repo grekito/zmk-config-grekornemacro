@@ -38,8 +38,6 @@
 &kp F18  &kp F19  &kp F20  &kp F21  &kp F22
 &kp F23  &kp F24  &trans   &trans   &tog 3
             >;
-
-            sensor-bindings = <&rot_kp S W>;
         };
 
         NUM {
