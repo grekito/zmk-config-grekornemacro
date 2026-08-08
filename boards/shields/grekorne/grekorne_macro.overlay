@@ -24,19 +24,4 @@
                     <&pro_micro 18 GPIO_ACTIVE_HIGH>,
                     <&pro_micro 15 GPIO_ACTIVE_HIGH>;
     };
-
-    right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        label = "right_encoder";
-        a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <20>;
-        status = "okay";
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&right_encoder>;
-        triggers-per-rotation = <20>;
-    };
 };
